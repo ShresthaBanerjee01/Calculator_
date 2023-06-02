@@ -7,12 +7,12 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
     <TextView
+        android:id="@+id/tvInput"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:background="#efefef"
         android:padding="10dp"
         android:textSize="48sp"
-        android:text="123223"
         android:gravity="right|bottom">
 
     </TextView>
@@ -189,7 +189,7 @@
             android:layout_weight="1"
             android:text="@string/clr"
             android:layout_margin="2dp"
-            android:onClick="onDigit"
+            android:onClick="onClear"
             android:backgroundTint="@color/grey">
 
         </Button>
