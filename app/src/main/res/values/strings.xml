@@ -16,4 +16,5 @@
     <string name="_0">0</string>
     <string name="clr">CLR</string>
     <string name="equal">=</string>
+    <string name="decimal">.</string>
 </resources>

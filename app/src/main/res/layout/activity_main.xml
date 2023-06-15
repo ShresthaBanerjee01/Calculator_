@@ -61,7 +61,7 @@
             android:layout_weight="1"
             android:text="@string/divide"
             android:layout_margin="2dp"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:backgroundTint="@color/grey">
 
         </Button>
@@ -111,7 +111,7 @@
             android:layout_weight="1"
             android:text="@string/Multiply"
             android:layout_margin="2dp"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:backgroundTint="@color/grey">
 
         </Button>
@@ -161,7 +161,7 @@
             android:layout_weight="1"
             android:text="@string/minus"
             android:layout_margin="2dp"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:backgroundTint="@color/grey">
 
         </Button>
@@ -175,10 +175,21 @@
             android:id="@+id/btn0"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:text="@string/_0"
             android:layout_margin="2dp"
             android:onClick="onDigit"
+            android:backgroundTint="@color/grey">
+
+        </Button>
+        <Button
+            android:id="@+id/btndot"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/decimal"
+            android:layout_margin="2dp"
+            android:onClick="onDecimal"
             android:backgroundTint="@color/grey">
 
         </Button>
@@ -200,7 +211,7 @@
             android:layout_weight="1"
             android:text="@string/Add"
             android:layout_margin="2dp"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:backgroundTint="@color/grey">
 
         </Button>
@@ -218,8 +229,9 @@
             android:layout_weight="1"
             android:text="@string/equal"
             android:layout_margin="2dp"
-            android:onClick="onDigit"
-            android:backgroundTint="@color/grey">
+            android:onClick="onEqual"
+            android:backgroundTint="@color/grey"
+            tools:ignore="UsingOnClickInXML">
 
         </Button>
     </LinearLayout>
