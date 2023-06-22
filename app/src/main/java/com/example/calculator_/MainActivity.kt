@@ -59,13 +59,53 @@ class MainActivity : AppCompatActivity() {
         if(lastNumeric)
         {
             var tvValue = tvInput?.text.toString()
-
+            var prefix = ""
             try {
-                val splitValue = tvValue.split("-")
-                var one = splitValue[0]
-                var two = splitValue[1]
+                if(tvValue.startsWith("-")){
+                    prefix = "-"
+                    tvValue = tvValue.substring(1)
+                }
+                if(tvValue.contains("-")){
+                    val splitValue = tvValue.split("-")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
 
-                tvInput?.text = (one.toDouble() - two.toDouble()).toString()
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+                    tvInput?.text = (one.toDouble() - two.toDouble()).toString()
+                }
+                else if(tvValue.contains("+")){
+                    val splitValue = tvValue.split("+")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+                    tvInput?.text = (one.toDouble() + two.toDouble()).toString()
+                }
+                else if(tvValue.contains("/")){
+                    val splitValue = tvValue.split("/")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+                    tvInput?.text = (one.toDouble() / two.toDouble()).toString()
+                }
+                else if(tvValue.contains("*")){
+                    val splitValue = tvValue.split("*")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+                    tvInput?.text = (one.toDouble() * two.toDouble()).toString()
+                }
+
             }catch (e : ArithmeticException){
                 e.printStackTrace()
             }
