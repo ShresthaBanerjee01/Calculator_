@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                     if(prefix.isNotEmpty()){
                         one = prefix + one
                     }
-                    tvInput?.text = (one.toDouble() - two.toDouble()).toString()
+                    tvInput?.text = removezeroafterdor((one.toDouble() - two.toDouble()).toString())
                 }
                 else if(tvValue.contains("+")){
                     val splitValue = tvValue.split("+")
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                     if(prefix.isNotEmpty()){
                         one = prefix + one
                     }
-                    tvInput?.text = (one.toDouble() + two.toDouble()).toString()
+                    tvInput?.text = removezeroafterdor((one.toDouble() + two.toDouble()).toString())
                 }
                 else if(tvValue.contains("/")){
                     val splitValue = tvValue.split("/")
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                     if(prefix.isNotEmpty()){
                         one = prefix + one
                     }
-                    tvInput?.text = (one.toDouble() / two.toDouble()).toString()
+                    tvInput?.text = removezeroafterdor((one.toDouble() / two.toDouble()).toString())
                 }
                 else if(tvValue.contains("*")){
                     val splitValue = tvValue.split("*")
@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity() {
                     if(prefix.isNotEmpty()){
                         one = prefix + one
                     }
-                    tvInput?.text = (one.toDouble() * two.toDouble()).toString()
+                    tvInput?.text = removezeroafterdor((one.toDouble() * two.toDouble()).toString())
                 }
 
             }catch (e : ArithmeticException){
@@ -111,6 +111,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun removezeroafterdor(result : String) : String{
+        var value = result
+        if(result.contains(".0")){
+             value = result.substring(0,result.length-2)
+        }
+        return value
     }
     private fun isOperatorAdded(value: String) : Boolean
     {
